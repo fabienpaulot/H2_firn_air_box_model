@@ -1,0 +1,40 @@
+{   "opt_name":"all_src_dep_count",
+    "optimize": [
+	{"name":"source_wo_ch4",
+	 "reference":"source_all_no_ch4_no_geo",
+	 "box":[0,1,2,3,4,5],
+	 "error":error_src,
+	 "tau":10
+	},
+	{"name":"deposition",
+	 "reference":"tau_lifetime_dep_all",
+	 "box":[0,1,2,3,4,5],
+	 "error":error_deposition,
+	 "tau":10
+	},
+	{"name":"CH4_OH_nh",
+	 "reference":"source_chem_ch4",
+	 "box":["nh"],
+	 "error":error_ch4,
+	 "tau":10
+	},
+	{"name":"CH4_OH_sh",
+	 "reference":"source_chem_ch4",
+	 "box":["sh"],
+	 "error":error_ch4,
+	 "tau":10
+	}
+],
+    "observation": {"error":"OBS_ERROR",
+		    "file":"OBS_SRC"},
+    "inversion_resolution":"annual",
+    "correction":"input/MODEL_SRC/ice_core_model_correction.csv",
+    "it_start":0,
+    "box_opt":[0,1,2,3,4,5],
+    "n_jobs":1,
+    "ntimes":1788,
+    "n_jobs_time":6,
+    "iter_max":1,
+    "gamma":gamma_opt,
+    "annual_avg":"firn_smooth"}    
+

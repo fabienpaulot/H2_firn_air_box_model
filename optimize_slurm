@@ -1,0 +1,14 @@
+#!/bin/csh -f
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=6  --cpus-per-task=1
+#SBATCH --output=log_slurm/%x.o%j
+#SBATCH --mail-type=NONE
+#SBATCH --mail-user=Fabien.Paulot@noaa.gov
+#SBATCH --constraint=bigmem
+
+source $MODULESHOME/init/csh
+module use -a /home/fms/local/modulefiles
+
+module load miniforge
+conda activate /nbhome/Fabien.Paulot/my_soft/miniconda3/envs/h2_firn_air_boxmodel
+python box_model.py -r $1 -o $2

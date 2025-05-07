@@ -1,0 +1,8 @@
+name: h2_boxmodel
+dependencies:
+- python=3.9
+- numpy
+- matplotlib
+- pandas
+- scipy
+- joblib
